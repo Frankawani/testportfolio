@@ -26,9 +26,9 @@ type Props = {
 
 const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
   return (
-    <div className=" bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 ">
+    <div className=" bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 md:scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 ">
       <Head>
-        <title>{pageInfo?.name} portfolio</title>
+        <title>{pageInfo?.name} - portfolio</title>
       </Head>
       <Header socials={socials} />
       <section id="hero" className=" snap-center">
@@ -87,6 +87,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       socials,
     },
 
-    revalidate: 20,
+    revalidate: 10,
   };
 };

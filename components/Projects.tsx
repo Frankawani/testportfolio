@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Project } from "../typings";
 import { urlFor } from "../sanity";
+import Link from "next/link";
 
 type Props = {
   projects: Project[];
@@ -46,14 +47,25 @@ function Projects({ projects }: Props) {
                 : {project?.title}
               </h4>
               <div className=" flex items-center space-x-2 justify-center">
-                {project?.technologies.map((tech) => (
-                  <img
-                    key={tech._id}
-                    src={urlFor(tech.image).url()}
-                    alt=""
-                    className=" h-6 w-6"
-                  />
-                ))}
+                <a
+                  href={project?.linkToBuild}
+                  target={"_blank"}
+                  rel="noreferrer"
+                >
+                  <button className=" bg-[#F7AB0A]/80 w-28 h-6 rounded-lg">
+                    Demo
+                  </button>
+                </a>
+
+                <a
+                  href={project?.linkToGithub}
+                  target={"_blank"}
+                  rel="noreferrer"
+                >
+                  <button className=" bg-[#F7AB0A]/80 w-28 h-6 rounded-lg">
+                    Source Code
+                  </button>
+                </a>
               </div>
               <p className=" md:text-lg text-center md:text-left text-sm">
                 {project?.summary}

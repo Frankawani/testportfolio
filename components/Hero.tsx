@@ -13,7 +13,7 @@ function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
     words: [
       `Hi!.. My Name is ${pageInfo?.name}`,
-      "Guy-who-loves-to-meet-New-People.tsx",
+      "Guy-who-loves-to-meet-New-People.jsx",
       "<ButLovesToCodeMore />",
     ],
     loop: true,
@@ -42,10 +42,10 @@ function Hero({ pageInfo }: Props) {
           <Link href={"#experience"}>
             <button className="heroButton">Experience</button>
           </Link>
-          <Link href={"#Skills"}>
+          <Link href={"#skills"}>
             <button className="heroButton">Skills</button>
           </Link>
-          <Link href={"#Projects"}>
+          <Link href={"#projects"}>
             <button className="heroButton">Projects</button>
           </Link>
         </div>
